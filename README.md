@@ -41,4 +41,4 @@ ________________________________________________________________________________
      - In "Notification" actions, select "In alarm" and choose the created SNS topic (DLQ-Alerts).
      - Test by sending a message to DLQ; confirm email receipt.
 
-  When a message lands in the DLQ, the "ApproximateNumberOfMessagesVisible" metric rises, triggering a CloudWatch Alarm. The alarm then publishes to an SNS Topic, which forwards an email notification to the subscribed recipient.
+      When a message lands in the DLQ, the "ApproximateNumberOfMessagesVisible" metric rises, triggering a CloudWatch Alarm. The alarm then publishes to an SNS Topic, which forwards an email notification to the subscribed recipient.
