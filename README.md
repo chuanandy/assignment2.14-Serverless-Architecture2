@@ -4,6 +4,7 @@
    
    No, SNS does not guarantee exactly-once delivery. Instead, it provides at-least-once delivery semantics, meaning messages are delivered at least once (and potentially multiple times due to retries or network issues), but duplicates are
    possible in rare cases (e.g., due to retries, network issues, subscriber unavailability).
+
    SNS FIFO topics provide exactly-once delivery by using deduplication IDs within a 5-minute window. For stricter guarantees, use FIFO topics or pair SNS with SQS FIFO queues.For applications requiring strict exactly-once guarantees, use FIFO     topics or pair SNS with downstream services like Amazon SQS FIFO queues for additional deduplication.
 _______________________________________________________________________________________________________________________________________________________________
 2. What is the purpose of the Dead-letter Queue (DLQ)?
