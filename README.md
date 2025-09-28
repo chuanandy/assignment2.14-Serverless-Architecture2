@@ -22,8 +22,9 @@ ________________________________________________________________________________
 
 3. How would you enable a notification to your email when messages are added to the DLQ?
 
-  An email notification can be enabled when messages are added to a DLQ (which is an Amazon SQS queue) using Amazon CloudWatch and Amazon SNS.
-  The general process:
+   An email notification can be enabled when messages are added to a DLQ (which is an Amazon SQS queue) using Amazon CloudWatch and Amazon SNS.
+
+   The general process:
   
   1. Create an SNS Topic for Notifications:
      - In the AWS SNS console, create a new topic (e.g., DLQ-Alerts).
