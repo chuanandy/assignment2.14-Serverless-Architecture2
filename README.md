@@ -19,19 +19,18 @@ ________________________________________________________________________________
    For SQS: if a consumer keeps failing to process a message, SQS moves it to a DLQ after the maximum receive count is exceeded.
    For EventBridge: if a target service cannot process the event, the event can be sent to a DLQ.
 _________________________________________________________________________________________________________________________________________________________________
-
 3. How would you enable a notification to your email when messages are added to the DLQ?
 
    An email notification can be enabled when messages are added to a DLQ (which is an Amazon SQS queue) using Amazon CloudWatch and Amazon SNS.
 
    The general process:
   
-  1. Create an SNS Topic for Notifications:
+   i) Create an SNS Topic for Notifications:
      - In the AWS SNS console, create a new topic (e.g., DLQ-Alerts).
      - Subscribe the desired Email Address to the newly created SNS topic (A confirmation email will be received that must be clicked to activate the subscription.).
      - Set the protocol to "Email" and ensure raw message delivery is disabled for simple text alerts.
 
-  2. Set Up a CloudWatch Alarm on DLQ Metrics:
+   ii) Set Up a CloudWatch Alarm on DLQ Metrics:
      - In the CloudWatch console, navigate to Alarms > Create alarm.
      - Select the DLQ (SQS queue) as the metric source.
      - Choose the metric "ApproximateNumberOfMessagesVisible" (or "ApproximateNumberOfMessagesNotVisible" for in-flight messages).
