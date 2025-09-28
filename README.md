@@ -17,7 +17,9 @@ ________________________________________________________________________________
    - Auditing and Compliance: Retain problematic messages for long-term storage and review.
 
    For SNS: if a subscriber (e.g., Lambda or SQS) fails consistently, SNS can move the undeliverable messages to a DLQ.
+
    For SQS: if a consumer keeps failing to process a message, SQS moves it to a DLQ after the maximum receive count is exceeded.
+
    For EventBridge: if a target service cannot process the event, the event can be sent to a DLQ.
 _________________________________________________________________________________________________________________________________________________________________
 3. How would you enable a notification to your email when messages are added to the DLQ?
