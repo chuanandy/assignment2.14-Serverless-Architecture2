@@ -10,8 +10,7 @@
 _______________________________________________________________________________________________________________________________________________________________
 2. What is the purpose of the Dead-letter Queue (DLQ)?
    
-   A Dead-Letter Queue (DLQ) is a secondary Amazon SQS queue designed to capture and isolate messages (or events) that fail repeated delivery or processing attempts after a maximum number of delivery or processing attempts. Its primary
-   purposes include:
+   A Dead-Letter Queue (DLQ) is a secondary Amazon SQS queue used to capture and isolate messages that fail after the maximum allowed delivery or processing attempts. Its primary purposes include:
    - Debugging and Analysis: Store failed messages for inspection of logs, payloads, and error patterns to identify root causes without losing data.
    - Isolation: Prevent failed messages from clogging the main queue or topic, allowing healthy processing to continue.
    - Reprocessing: Enable manual or automated re-injection of messages back into the main workflow after fixes.
